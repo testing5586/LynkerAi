@@ -1,0 +1,36 @@
+/* LynkerAi deep-blue + gold theme */
+:root{
+  --lynker-deep: #0b2545; /* deep blue */
+  --lynker-gold: #d4af37; /* gold */
+  --card-radius: 12px;
+}
+
+/* Body background and text */
+body {
+  background-color: var(--lynker-deep) !important;
+  color: #f5f7fa !important;
+}
+
+/* Streamlit main content cards */
+[data-testid='stAppViewContainer'] .stMarkdown, .stApp, .css-1outpf7 {
+  background: linear-gradient(180deg, rgba(11,37,69,0.85), rgba(11,37,69,0.95));
+}
+
+/* Rounded panels */
+.stContainer, .stFrame, .stCard, .element-container {
+  border-radius: var(--card-radius) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35) !important;
+}
+
+/* Accent buttons */
+.css-1offfwp, button, .stButton button {
+  background-color: var(--lynker-gold) !important;
+  color: var(--lynker-deep) !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+/* Headings */
+h1, h2, h3, .streamlit-expanderHeader {
+  color: #fff !important;
+}
