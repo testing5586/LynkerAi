@@ -1,36 +1,72 @@
-/* LynkerAi deep-blue + gold theme */
-:root{
-  --lynker-deep: #0b2545; /* deep blue */
-  --lynker-gold: #d4af37; /* gold */
-  --card-radius: 12px;
+/* LynkerAi dark blue + gold theme overrides for Streamlit */
+:root {
+  --lynker-bg: #0c1526;
+  --lynker-card: #162a45;
+  --lynker-accent: #e6b93c;
+  --lynker-text: #f1f1f1;
 }
 
-/* Body background and text */
-body {
-  background-color: var(--lynker-deep) !important;
-  color: #f5f7fa !important;
+.stApp, .stApp header { background: var(--lynker-bg) !important; }
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+  background: #101b31 !important;
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Streamlit main content cards */
-[data-testid='stAppViewContainer'] .stMarkdown, .stApp, .css-1outpf7 {
-  background: linear-gradient(180deg, rgba(11,37,69,0.85), rgba(11,37,69,0.95));
+/* Streamlit multipage navigation */
+[data-testid="stSidebarNav"] ul { list-style: none; padding: 6px; margin: 0; }
+[data-testid="stSidebarNav"] ul li { margin: 6px 4px; }
+[data-testid="stSidebarNav"] a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--lynker-text) !important;
+  text-decoration: none !important;
+  opacity: 0.92;
+}
+[data-testid="stSidebarNav"] a:hover {
+  background: rgba(230,185,60,0.12);
+  opacity: 1;
+}
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+  background: rgba(230,185,60,0.18);
+  border-left: 3px solid var(--lynker-accent);
+  padding-left: 9px; /* account for border */
+  color: var(--lynker-text) !important;
 }
 
-/* Rounded panels */
-.stContainer, .stFrame, .stCard, .element-container {
-  border-radius: var(--card-radius) !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35) !important;
+/* Cards and containers */
+div[role="group"], .stContainer, .stTabs, .stDataFrame, .stExpander, .stTextInput, .stTextArea {
+  border-radius: 16px !important;
 }
 
-/* Accent buttons */
-.css-1offfwp, button, .stButton button {
-  background-color: var(--lynker-gold) !important;
-  color: var(--lynker-deep) !important;
+/* Titles and text */
+h1, h2, h3, h4, h5, h6, p, span, label, div { color: var(--lynker-text) !important; }
+
+/* Buttons */
+.stButton > button {
+  background: var(--lynker-accent) !important;
+  color: #1a1a1a !important;
+  border-radius: 10px !important;
   border: none !important;
-  border-radius: 8px !important;
+  font-weight: 700 !important;
 }
+.stButton > button:hover { filter: brightness(1.05); }
 
-/* Headings */
-h1, h2, h3, .streamlit-expanderHeader {
-  color: #fff !important;
-}
+/* Inputs */
+input, textarea, select { background: #0f1a2d !important; color: var(--lynker-text) !important; border: 1px solid #243656 !important; }
+
+/* Tables */
+thead tr th { background: #0f1a2d !important; }
+tbody tr td { background: #12203a !important; }
+
+/* Helper header */
+.lynker-header { display: flex; align-items: center; width: 100%; }
+.lynker-header .right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.lynker-avatar { width: 28px; height: 28px; border-radius: 9999px; background: linear-gradient(135deg,#8ec5fc,#e0c3fc); border: 2px solid rgba(255,255,255,0.12); }
+
+/* Make Streamlit default header blend with theme */
+.stApp header { border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+.stApp header div[role="heading"] { color: var(--lynker-text) !important; }
+
