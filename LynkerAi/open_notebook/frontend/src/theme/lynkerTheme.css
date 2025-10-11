@@ -1,0 +1,39 @@
+:root {
+  --lynker-bg: #0c1526;
+  --lynker-card: #162a45;
+  --lynker-accent: #e6b93c;
+  --lynker-text: #f1f1f1;
+  --lynker-radius: 16px;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background-color: var(--lynker-bg);
+  color: var(--lynker-text);
+  font-family: "Inter","Noto Sans SC",sans-serif;
+}
+.app-layout { display: grid; grid-template-columns: 260px 1fr; grid-template-rows: 56px 1fr; height: 100%; }
+.sidebar { grid-row: 1 / span 2; grid-column: 1; background: #101b31; border-right: 1px solid rgba(255,255,255,0.06); padding: 12px; }
+.header { grid-column: 2; grid-row: 1; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: #0e1a30; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.content { grid-column: 2; grid-row: 2; padding: 16px; overflow: auto; }
+.card { background: var(--lynker-card); border-radius: var(--lynker-radius); padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+.accent { color: var(--lynker-accent); }
+.btn-primary { background: var(--lynker-accent); color: #111; border: none; border-radius: var(--lynker-radius); padding: 10px 16px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { filter: brightness(1.05); }
+.sidebar .title { font-size: 1.1rem; margin: 8px 8px 12px; opacity: 0.9; }
+.nav-section { margin: 12px 0; }
+.nav-item { display: block; padding: 10px 12px; border-radius: 10px; color: var(--lynker-text); text-decoration: none; opacity: 0.9; }
+.nav-item:hover, .nav-item.active { background: rgba(230,185,60,0.18); color: var(--lynker-text); }
+.divider { height: 1px; background: rgba(255,255,255,0.08); margin: 12px 8px; }
+.avatar { width: 28px; height: 28px; border-radius: 9999px; background: linear-gradient(135deg,#8ec5fc,#e0c3fc); margin-left: 10px; border: 2px solid rgba(255,255,255,0.12); }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.muted { opacity: 0.8; font-size: 0.9rem; }
+.energy { display: flex; align-items: center; justify-content: center; height: 100%; }
+.energy .score { font-size: 42px; font-weight: 800; color: var(--lynker-accent); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.16); border-radius: 6px; }
+

@@ -1,4 +1,4 @@
-.env
+﻿.env
 prompts/patterns/user/
 notebooks/
 data/
@@ -129,6 +129,11 @@ desktop.ini
 
 **/claude-logs
 
-LynkerAi/
-
 tmp_repo_check.py
+
+# LynkerAi repo structure
+LynkerAi/notebook/
+!LynkerAi/open_notebook/
+!LynkerAi/open_notebook/frontend/
+!LynkerAi/open_notebook/frontend/**
+
