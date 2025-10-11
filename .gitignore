@@ -8,6 +8,11 @@ surreal-data/
 docker.env
 !setup_guide/docker.env
 notebook_data/
+# Local SurrealDB and binaries
+surrealdb.exe
+surreal_local_data/
+surreal_data/
+surreal_single_data/
 # Python-specific
 *.py[cod]
 __pycache__/
